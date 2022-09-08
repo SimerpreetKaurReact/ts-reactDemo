@@ -1,8 +1,10 @@
 import React from 'react'
+import classes from "./SingleTodo.module.css"
 
-const SingleTodo: React.FC<{ id: string, text: string }> = (props) => {
+const SingleTodo: React.FC<{ id: string, text: string, handleRemoveTodo: () => void }> = (props) => {
+
     return (
-        <li key={props.id}>{props.text}</li>
+        <li className={classes.item} key={props.id} onClick={props.handleRemoveTodo}>{props.text}</li>
     )
 }
 
